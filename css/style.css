@@ -1,43 +1,86 @@
+html {
+	background-color: #171717;
+}
+
 body {
-  width: 1000px;
-  margin: 0px auto;
-  background-color: #171717;
-  color: palegreen;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	align-items: center;
+	justify-content: space-between;
+	background: center no-repeat url("../assets/hex.png") transparent;
 }
-h1 {
-  padding: 0px;
-  margin: 16px auto;
-  text-align: center;
+
+header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #131313;
+	margin: 0;
+	padding: 0;
+	border-bottom: 2px solid palegreen;
 }
-.Navbar {
-  display: flex;
-  padding: 8px;
-  margin: 16px;
+
+.nav-tabs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 34px;
+	margin: 0 34px;
+	padding: 8px 0;
+	height: 42px;
 }
-.Navbar div {
-  flex: 1;
-  margin: 4px 16px;
-  padding: 0px 34px;
-  text-align: center;
+
+.hero {
+	display: flex;
+	height: 100vh;
+	width: 50%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
-.underline {
-  height: 2px;
-  margin: 0px auto;
-  background-color: palegreen;
+
+.hero-content {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: palegreen;
+	opacity: 1;
 }
-.root {
-  padding: 16px;
-  display: flex;
-  height: 500px;
+
+.nav-tabs a,
+.nav-tabs button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	text-align: center;
+	height: 100%;
+	background-color: transparent;
+	color: palegreen;
+	border: transparent;
 }
+
+.nav-tabs button:hover {
+	border: 1px solid white;
+}
+
+.nav-tabs button:active {
+	border: 1px solid palegreen;
+}
+
 footer {
-  height: 50px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  outline: solid;
-  background-color: #131313;
-  color: palegreen;
+	height: 50px;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	border-top: 2px solid palegreen;
+	background-color: #131313;
+	color: palegreen;
 }
