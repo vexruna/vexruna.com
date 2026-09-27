@@ -8,22 +8,35 @@
 	</head>
 	<body>
 		<header>
-			<nav class="nav-tabs">
-				<button type="button" data-hero="bio">Bio</button>
-				<button type="button" data-hero="projects">Projects</button>
-				<button type="button" data-hero="gallery">Gallery</button>
-				<button type="button" data-hero="discography">Discography</button>
-				<button type="button" data-hero="contact">Contact</button>
+			<img src="assets/logo.png" class="logo" alt="MyLogo">
+			<!-- Mobile Menu Button -->
+			<nav class="header-nav">
+				<button type="button" class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</button>
+				<div class="nav-tabs">
+					<button class="navtab" type="button" data-hero="bio" id="bioButton">Bio</button>
+					<button class="navtab" type="button" data-hero="projects" id="projectsButton">Projects</button>
+					<button class="navtab" type="button" data-hero="gallery" id="galleryButton">Gallery</button>
+					<button class="navtab" type="button" data-hero="discography" id="discographyButton">Discography</button>
+					<button class="navtab" type="button" data-hero="contact" id="contactButton">Contact</button>
+				</div>
 			</nav>
 		</header>
-		<section class="hero">
+		<main class="hero">
 			<div class="hero-content">
 				<h1 id="hero-title">Welcome</h1>
-				<p id="hero-text">This is the bio section.</p>
+				<p id="hero-text">Thanks for checking out my website. <br>
+					It is currently under construction. <br>
+					You can use the navigation tabs above for more information.</p>
 			</div>
-		</section>
+		</main>
 		<footer>
-			<p>Prototype ver</p>
+			<p>Prototype version © vexruna</p>
 		</footer>
+		<script type="module" src="js/index.js">
+		</script>
 	</body>
 </html>

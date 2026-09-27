@@ -1,41 +1,109 @@
-html {
-	background-color: #171717;
-}
-
 body {
 	display: flex;
 	flex-direction: column;
 	margin: 0;
 	padding: 0;
 	align-items: center;
-	justify-content: space-between;
-	background: center no-repeat url("../assets/hex.png") transparent;
+	background-color: #171717;
 }
 
 header {
-	position: fixed;
+	display: flex;
+	position: sticky;
 	top: 0;
 	width: 100%;
 	background-color: #131313;
 	margin: 0;
-	padding: 0;
+	padding: 8px 0;
+	gap: 8px;
 	border-bottom: 2px solid palegreen;
+	height: auto;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column nowrap;
+}
+
+.logo {
+	flex: 0;
+	font-weight: bold;
+	font-size: 1.5rem;
+	color: palegreen;
+}
+
+.hamburger-menu {
+	display: none;
+	align-self: flex-start;
+
+	/* Hide on desktop */
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.bar {
+	display: block;
+	width: 25px;
+	height: 3px;
+	background: palegreen;
+	margin: 5px auto;
+	transition: all 0.3s ease;
 }
 
 .nav-tabs {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 34px;
+	gap: 18px;
 	margin: 0 34px;
 	padding: 8px 0;
-	height: 42px;
+	flex-flow: row wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	header {
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+
+	.header-nav {
+		flex: 0;
+	}
+
+	.logo {
+		order: 1;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.hamburger-menu {
+		display: block;
+	}
+
+	.nav-tabs {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		max-height: 0;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+		flex-flow: column nowrap;
+		align-items: flex-start;
+		background-color: #131313;
+		border-bottom: 2px solid palegreen;
+	}
+
+	.nav-tabs.active {
+		max-height: 300px;
+	}
 }
 
 .hero {
 	display: flex;
-	height: 100vh;
-	width: 50%;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -49,27 +117,31 @@ header {
 	flex-direction: column;
 	color: palegreen;
 	opacity: 1;
+	text-align: center;
 }
 
-.nav-tabs a,
-.nav-tabs button {
+.navtab {
 	display: flex;
-	justify-content: center;
+	padding: 8px;
 	align-items: center;
 	flex: 1;
 	text-align: center;
 	height: 100%;
 	background-color: transparent;
 	color: palegreen;
-	border: transparent;
+	border: 1px solid transparent;
 }
 
-.nav-tabs button:hover {
+.navtab:hover {
+	border: 1px solid palegreen;
+}
+
+.navtab:active {
 	border: 1px solid white;
 }
 
-.nav-tabs button:active {
-	border: 1px solid palegreen;
+h2 {
+	height: 30vh;
 }
 
 footer {
