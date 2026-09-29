@@ -23,15 +23,14 @@ jobs:
           chmod 600 ~/.ssh/hetzner_key
           ssh-keyscan -p 22 www751.your-server.de >> ~/.ssh/known_hosts
 
-      - name: Test SFTP connection
+      - name: Deploy website
         run: |
           sftp \
             -i ~/.ssh/hetzner_key \
             -P 22 \
             -o BatchMode=yes \
             "${{ secrets.HETZNER_USER }}@www751.your-server.de" <<'EOF'
-          pwd
-          ls
-          ls public_html
+          cd public_html
+          put -r *
           bye
           EOF
