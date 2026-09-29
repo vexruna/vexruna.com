@@ -1,26 +1,26 @@
 # First workflow written by me
-
 name: Deploy to Hetzner Webhosting
 on:
   push:
     branches:
       - main
-    jobs:
-      deploy:
-        name: Deploy to Hetzner
-        runs-on: ubuntu-latest
 
-        steps:
-          - name: Checkout code
-            uses: actions/checkout@v4
+jobs:
+  deploy:
+    name: Deploy to Hetzner
+    runs-on: ubuntu-latest
 
-          - name: Deploy via SFTP
-            uses: wlixcc/SFTP-Deploy-Action@v1.2.6
-            with:
-              username: ${{ secrets.HETZNER_USER }}
-              server: www751.your-server.de
-              port: 22
-              ssh_private_key: ${{ secrets.HETZNER_SFTP_KEY }}
-              local_path: './*'
-              remote_path: './public_html'
-              sftp_only: true
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+        with:
+          username: ${{ secrets.HETZNER_USER }}
+          server: www751.your-server.de
+          port: 22
+          ssh_private_key: ${{ secrets.HETZNER_SFTP_KEY }}
+          local_path: './*'
+          remote_path: './public_html'
+          sftp_only: true
