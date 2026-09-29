@@ -104,20 +104,32 @@ header {
 
 .hero {
 	display: flex;
+	flex: 1;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
 .hero-content {
-	display: flex;
-	flex: 1;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	color: palegreen;
 	opacity: 1;
 	text-align: center;
+	animation: fade-effect 1s;
+}
+
+/* Go from zero to full opacity */
+@keyframes fade-effect {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 .navtab {
