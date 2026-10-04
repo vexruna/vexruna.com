@@ -1,10 +1,13 @@
 # First workflow written by me
-name: Remote SSH Command
-on: [push]
+name: Deploy to VPS via SSH
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
-    name: Build
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Execute remote SSH commands using SSH key
