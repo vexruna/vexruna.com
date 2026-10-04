@@ -1,36 +1,17 @@
 # First workflow written by me
-name: Deploy to Hetzner Webhosting
-
+name: Remote SSH Command
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
-
-jobs:
-  deploy:
-    name: Deploy to Hetzner
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Configure SSH
-        run: |
-          mkdir -p ~/.ssh
-          printf '%s\n' '${{ secrets.HETZNER_SFTP_KEY }}' > ~/.ssh/hetzner_key
-          chmod 600 ~/.ssh/hetzner_key
-          ssh-keyscan -p 22 www751.your-server.de >> ~/.ssh/known_hosts
-
-      - name: Deploy website
-        run: |
-          sftp \
-            -i ~/.ssh/hetzner_key \
-            -P 22 \
-            -o BatchMode=yes \
-            "${{ secrets.HETZNER_USER }}@www751.your-server.de" <<'EOF'
-          cd public_html
-          put -r *
-          bye
-          EOF
+    jobs:
+      build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+          - name: Execute remote SSH commands using password
+            uses: appleboy/ssh-action@v1
+            with:
+              host: ${{ secrets.SSH_HOST }}
+              username: ${{ secrets.SSH_USER }}
+              key: ${{ secrets.SSH_PRIVATE_KEY }}
+              port: ${{ secrets.SSH_PORT }}
+              script: whoami
