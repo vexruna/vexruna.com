@@ -18,6 +18,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd ~/public_html
+            cd "$HOME/public_html"
+            pwd
             git pull origin main
-            echo "Successfully deployed"
