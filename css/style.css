@@ -23,11 +23,12 @@ header {
 	flex-flow: column nowrap;
 }
 
-.logo {
-	flex: 0;
+#logo {
+	flex: 0 1 34px;
 	font-weight: bold;
 	font-size: 1.5rem;
 	color: palegreen;
+	max-height: 34px;
 }
 
 .hamburger-menu {
@@ -70,7 +71,7 @@ header {
 		flex: 0;
 	}
 
-	.logo {
+	#logo {
 		order: 1;
 		position: absolute;
 		left: 50%;
