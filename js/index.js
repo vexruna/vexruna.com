@@ -1,47 +1,40 @@
 document.querySelector("#Greet").style.display = "flex";
-const bioButton = document.getElementById("bioButton");
-const projectsButton = document.getElementById("projectsButton");
-const galleryButton = document.getElementById("galleryButton");
-const discographyButton = document.getElementById("discographyButton");
-const contactButton = document.getElementById("contactButton");
+const projectsButton = document.querySelector("#projectsButton");
+const galleryButton = document.querySelector("#galleryButton");
+const discographyButton = document.querySelector("#discographyButton");
+const aboutButton = document.querySelector("#aboutButton");
 
 const hero = document.getElementsByClassName("hero-content");
 
 function openTab(tabName) {
 	for (let i = 0; i < hero.length; i++) {
 		hero[i].style.display = "none";
-		document.getElementById(tabName).style.display = "flex";
+		document.querySelector(tabName).style.display = "flex";
 	}
 }
-
-bioButton.addEventListener("click", () => {
-	navTabs.classList.remove("active");
-	mobileMenuBtn.setAttribute("aria-expanded", "false");
-	openTab("Bio");
-});
 
 projectsButton.addEventListener("click", () => {
 	navTabs.classList.remove("active");
 	mobileMenuBtn.setAttribute("aria-expanded", "false");
-	openTab("Projects");
+	openTab("#Projects");
 });
 
 galleryButton.addEventListener("click", () => {
 	navTabs.classList.remove("active");
 	mobileMenuBtn.setAttribute("aria-expanded", "false");
-	openTab("Gallery");
+	openTab("#Gallery");
 });
 
 discographyButton.addEventListener("click", () => {
 	navTabs.classList.remove("active");
 	mobileMenuBtn.setAttribute("aria-expanded", "false");
-	openTab("Discography");
+	openTab("#Discography");
 });
 
-contactButton.addEventListener("click", () => {
+aboutButton.addEventListener("click", () => {
 	navTabs.classList.remove("active");
 	mobileMenuBtn.setAttribute("aria-expanded", "false");
-	openTab("Contact");
+	openTab("#About");
 });
 
 // Mobile menu toggle
