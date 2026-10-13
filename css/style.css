@@ -153,8 +153,50 @@ header {
 	border: 1px solid white;
 }
 
-h2 {
-	height: 30vh;
+.project-list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	gap: 16px;
+}
+
+.project-polybox {
+	flex: 0 1 195px;
+	width: 195px;
+	aspect-ratio: 65 / 92;
+	margin: 0;
+	padding: 0;
+	border: 2px solid palegreen;
+	background-image: url("../img/polybox.jpg");
+}
+
+.project-polybox:hover {
+	filter: brightness(120%);
+}
+
+.project-polybox h1 {
+	font-size: 16px;
+}
+
+#overlay {
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #09090969;
+	z-index: 2;
+}
+
+#overlay p {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 50px;
+	transform: translate(-50%, -50%);
 }
 
 footer {

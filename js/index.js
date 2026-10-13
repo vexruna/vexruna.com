@@ -45,3 +45,17 @@ mobileMenuBtn.addEventListener("click", () => {
 	const isActive = navTabs.classList.toggle("active");
 	mobileMenuBtn.setAttribute("aria-expanded", isActive);
 });
+
+// Overlay toggle
+const overlay = document.querySelector("#overlay");
+
+overlay.addEventListener("click", () => {
+	overlay.style.display = "none";
+});
+
+// Polybox click
+const polybox = document.querySelector(".project-polybox");
+
+polybox.addEventListener("click", () => {
+	overlay.style.display = "block";
+});
