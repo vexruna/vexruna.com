@@ -44,7 +44,7 @@ jobs:
 
           payload = {
               "embeds": [{
-                  "title": f"🚀 New push to {os.environ['REPO']}",
+                  "title": f"New push to {os.environ['REPO']}",
                   "url": os.environ["COMPARE_URL"],
                   "color": 5793266,
                   "description": "\n".join(lines)[:4000],
